@@ -1,6 +1,7 @@
 <div class="search" >
-  <%= form_tag(new_searches_path, :method => "get")  do %>
+  <%= form_tag(new_searches_path, :method => "get", :class=>"form-inline")  do %>
     <%= text_field_tag :search , nil, placeholder: @search_text%>
+    <%= link_to image_tag(@create_image), new_inspira_path, class: "btn pull-right" %>
   <% end %>
 </div>
 <div id="myCarousel" class="carousel slide">
