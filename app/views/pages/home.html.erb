@@ -9,9 +9,15 @@
   	  <img src= <%= @welcome_image %> alt="" class="pixastic pixastic-blur(amount=0.1)">
     </div>
     <% @images.each_with_index do |image, index| %>
+      <% inspira = @inspiras[index] %>
       <div class="item">
   	    <img src= <%= image.sub("public","") %> alt="" class="pixastic pixastic-blur(amount=0.5)">
-  	    <p class="inspira well transbox" style="top: <%=rand(0 .. 70)%>%; right: <%=rand(0 .. 70)%>%;"> <%= @inspiras[index].message%></p>
+  	    <div class="inspira well transbox" style="top: <%=rand(0 .. 50)%>%; right: <%=rand(0 .. 60)%>%;"> 
+  	      <p><%= inspira.message%></p>
+  	      <%= pluralize inspira.reputation_value_for(:votes).to_i, "vote" %>
+  	      |<%= link_to "up", vote_inspira_path(inspira, type: "up"), method: "post" %>
+  	      |<%= link_to "down", vote_inspira_path(inspira, type: "down"), method: "post" %>
+  	    </div>
       </div>
     <% end %>
   </div>
