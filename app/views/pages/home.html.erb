@@ -11,7 +11,7 @@
     <% @images.each_with_index do |image, index| %>
       <div class="item">
   	    <img src= <%= image.sub("public","") %> alt="" class="pixastic pixastic-blur(amount=0.5)">
-  	    <p class="inspira well transbox" style="top: <%=rand(0 .. 70)%>%; right: <%=rand(0 .. 70)%>%;"> <%= @messages[index]%></p>
+  	    <p class="inspira well transbox" style="top: <%=rand(0 .. 70)%>%; right: <%=rand(0 .. 70)%>%;"> <%= @inspiras[index].message%></p>
       </div>
     <% end %>
   </div>
