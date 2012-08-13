@@ -1,0 +1,17 @@
+body {overflow: hidden};
+
+.inspira {
+  position:absolute;
+  top:50%;
+  right:44%;
+  z-index:1;
+  font-size:20px;
+}
+
+.transbox {
+  margin:30px 50px;
+  background-color:#eeeeff;
+  border:1px solid black;
+  opacity:0.65;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
